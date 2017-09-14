@@ -78,6 +78,21 @@ module.exports = __webpack_require__(2);
 "use strict";
 
 
+var app = new Vue({
+    el: "#app",
+    created: function created() {
+        console.log("hello vue!");
+    },
+    data: {
+        titre: "Todo List With VueJs"
+    },
+    methods: {
+        submitTask: function submitTask() {
+            console.log("tache soumise");
+        }
+    }
+});
+
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {

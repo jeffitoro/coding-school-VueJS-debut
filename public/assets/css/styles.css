@@ -5814,4 +5814,20 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+.error {
+  border: 1px solid red;
+  color: red; }
+
+ul.todo .done {
+  display: none; }
+
+ul.all li {
+  display: block; }
+
+ul.done li {
+  display: none; }
+
+ul.done .done {
+  display: block; }
+
 /*# sourceMappingURL=styles.css.map*/

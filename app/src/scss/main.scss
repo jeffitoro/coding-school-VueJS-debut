@@ -1,1 +1,25 @@
-@import "../../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss"
+@import "../../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
+.error{
+    border: 1px solid red;
+    color: red;
+}
+
+ul.todo{
+    .done{
+        display: none;
+    }
+}
+ul.all{
+    li{
+        display:block;
+    }
+}
+ul.done{
+    li{
+        display: none;
+    }
+    .done{
+        display: block;
+    }
+}
