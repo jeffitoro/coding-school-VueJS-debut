@@ -14,7 +14,8 @@
         <h1 class="text-center">{{ titre }}</h1>
         <div class="text-center">
             <form v-on:submit.prevent="submitTask" action="" class="form-inline" id="form-task">
-                <input type="text" id="input-task" class="form-control" placeholder="new-task">
+                <input v-on:focus="focusActive" v-bind:class="{error: isActive}" v-model="task" type="text" id="input-task" class="form-control"
+                    placeholder="new-task">
                 <button type="submit" class="btn btn-primary" id="btn-add-task">Add task</button>
             </form>
         </div>
@@ -23,7 +24,9 @@
             <button type="button" class="btn btn-success filter">Todo</button>
             <button type="button" class="btn btn-success filter">Done</button>
         </h2>
-        <ul class="list-group" id="list-tasks"></ul>
+        <ul class="list-group" id="list-tasks">
+            <li v-for="task in tasks" class="list-group-item">{{task.txt}}</li>
+        </ul>
     </div>
     <script src="../node_modules/vue/dist/vue.js"></script>
     <script src="./assets/js/bundle.js"></script>
