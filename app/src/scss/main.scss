@@ -4,6 +4,25 @@
     border: 1px solid red;
     color: red;
 }
+.list-group button{
+    padding-bottom: 0;
+    padding-top: 0;
+    border: 0.05px solid white;
+    background-color: white;
+    color: black;
+    margin-right: 2px;
+    .fa.fa-check-square-o{
+        color: green;   
+    }
+    .fa.fa-trash-o{
+        color: red;
+    }
+}
+li.done{
+    span{
+        text-decoration: line-through;
+    }
+}
 
 ul.todo{
     .done{
