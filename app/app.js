@@ -45,7 +45,8 @@ let app = new Vue({
         titre: "Todo List With VueJs",
         task: "",
         isActive: false,
-        tasks: []
+        tasks: [],
+        filter: "all"
     },
     methods: {
         submitTask: function () {
@@ -60,6 +61,9 @@ let app = new Vue({
         },
         focusActive: function () {
             this.isActive = false;
+        },
+        clickFilter(event) {
+            this.$data.filter = event.toElement.textContent.toLowerCase();
         }
     }
 })

@@ -21,11 +21,11 @@
             </form>
         </div>
         <h2>tasks <small>Filtre: </small>
-            <button type="button" class="btn btn-success filter">All</button>
-            <button type="button" class="btn btn-success filter">Todo</button>
-            <button type="button" class="btn btn-success filter">Done</button>
+            <button type="button" class="btn btn-success filter" v-on:click="clickFilter">All</button>
+            <button type="button" class="btn btn-success filter" v-on:click="clickFilter">Todo</button>
+            <button type="button" class="btn btn-success filter" v-on:click="clickFilter">Done</button>
         </h2>
-        <ul class="list-group" id="list-tasks">
+        <ul class="list-group" id="list-tasks" v-bind:class="filter">
             <add-task v-for="task in tasks" v-bind:taskprop="task" vbind:key="task.id"></add-task>
         </ul>
     </div>
