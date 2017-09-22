@@ -1,12 +1,19 @@
 {
     "tasks": [
         {
-            "text": "Faire les courses",
-            "state": "todo"
+            "id": 1,
+            "txt": "Faire les courses",
+            "status": "todo"
         },
         {
-            "text": "Préparer mes cours avec quelqu'un!",
-            "state": "done"
+            "id": 2,
+            "txt": "préparer les cours pour la rentré",
+            "status": "done"
+        },
+        {
+            "id": 3,
+            "txt": "préparer à manger",
+            "status": "done"
         }
     ]
 }

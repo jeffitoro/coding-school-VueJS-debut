@@ -26,10 +26,10 @@
             <button type="button" class="btn btn-success filter">Done</button>
         </h2>
         <ul class="list-group" id="list-tasks">
-            <add-task v-for="task in tasks" v-bind:taskprop="task"></add-task>
+            <add-task v-for="task in tasks" v-bind:taskprop="task" vbind:key="task.id"></add-task>
         </ul>
     </div>
-    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script src="./assets/js/vue.js"></script>
     <script src="./assets/js/bundle.js"></script>
 </body>
 
