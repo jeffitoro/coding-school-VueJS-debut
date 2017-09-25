@@ -12,7 +12,8 @@
 
 <body>
     <div class="container" id="app">
-        <h1 class="text-center">{{ titre }}</h1>
+        <h1 class="text-center">
+            <span v-on:mouseover="spanAnimation" v-on:mouseout="spanExitAnimation" style="display:inline-block">{{ titre }}</span></h1>
         <div class="text-center">
             <form v-on:submit.prevent="submitTask" action="" class="form-inline" id="form-task">
                 <input v-on:focus="focusActive" v-bind:class="{error: isActive}" v-model="task" type="text" id="input-task" class="form-control"
