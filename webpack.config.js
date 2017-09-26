@@ -14,6 +14,9 @@ module.exports = {
     },
     module: {
         rules: [{
+            test: /\.vue$/,
+            loader: "vue-loader"
+        }, {
             test: /.jsx?$/,
             include: [
                 path.resolve(__dirname, 'app')
