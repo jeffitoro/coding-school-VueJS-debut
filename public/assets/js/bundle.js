@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 10);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -70,7 +70,7 @@
 "use strict";
 
 
-var bind = __webpack_require__(3);
+var bind = __webpack_require__(4);
 var isBuffer = __webpack_require__(15);
 
 /*global toString:true*/
@@ -397,10 +397,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(5);
+    adapter = __webpack_require__(6);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(5);
+    adapter = __webpack_require__(6);
   }
   return adapter;
 }
@@ -471,7 +471,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
 /* 2 */
@@ -574,6 +574,12 @@ module.exports = function normalizeComponent (
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__(14);
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
 
@@ -589,7 +595,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -779,7 +785,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -790,7 +796,7 @@ var settle = __webpack_require__(18);
 var buildURL = __webpack_require__(20);
 var parseHeaders = __webpack_require__(21);
 var isURLSameOrigin = __webpack_require__(22);
-var createError = __webpack_require__(6);
+var createError = __webpack_require__(7);
 var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(23);
 
 module.exports = function xhrAdapter(config) {
@@ -964,10 +970,10 @@ module.exports = function xhrAdapter(config) {
   });
 };
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -992,7 +998,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1004,7 +1010,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1030,21 +1036,21 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(10);
+__webpack_require__(11);
 module.exports = __webpack_require__(36);
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _App = __webpack_require__(11);
+var _App = __webpack_require__(12);
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -1058,12 +1064,12 @@ var app = new Vue({
 });
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_App_vue__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_App_vue__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_App_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_App_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_50559edf_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__ = __webpack_require__(35);
 var disposed = false
@@ -1109,7 +1115,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1119,7 +1125,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _axios = __webpack_require__(13);
+var _axios = __webpack_require__(3);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -1161,8 +1167,8 @@ exports.default = {
     },
     created: function created() {
         var self = this;
-        _axios2.default.get("http://127.0.0.1:8080/todo.json").then(function (reponse) {
-            self.$data.tasks = reponse.data.tasks;
+        _axios2.default.get("http://localhost:8080/getTodos").then(function (reponse) {
+            self.$data.tasks = reponse.data;
         }).catch(function (error) {
             console.log(error);
         });
@@ -1174,7 +1180,8 @@ exports.default = {
             isActive: false,
             tasks: [],
             filter: "all",
-            isMouseOver: false
+            isMouseOver: false,
+            idBD: undefined
         };
     },
 
@@ -1184,7 +1191,26 @@ exports.default = {
                 this.isActive = true;
                 document.activeElement.blur();
             } else {
-                this.tasks.push({ id: this.tasks.length + 1, txt: this.task, status: "todo" });
+                var self = this;
+                _axios2.default.post("http://localhost:8080/add-todo", {
+                    txt: this.task, status: 'todo'
+                }).then(function (response) {
+                    console.log(response);
+                }).catch(function (error) {
+                    console.log("error submit");
+                    console.log(error);
+                });
+                _axios2.default.get("http://localhost:8080/add-todo").then(function (response) {
+                    self.$data.tasks.push({
+                        id: response.data[0].id,
+                        txt: response.data[0].txt, status: response.data[0].status
+                    });
+                    console.log("chez reponse id");
+                    console.log(response);
+                }).catch(function (error) {
+                    console.log("error id envoyé");
+                    console.log(error);
+                });
                 this.task = "";
                 console.dir(this.tasks);
             }
@@ -1205,12 +1231,6 @@ exports.default = {
 };
 
 /***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(14);
-
-/***/ }),
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1218,7 +1238,7 @@ module.exports = __webpack_require__(14);
 
 
 var utils = __webpack_require__(0);
-var bind = __webpack_require__(3);
+var bind = __webpack_require__(4);
 var Axios = __webpack_require__(16);
 var defaults = __webpack_require__(1);
 
@@ -1253,9 +1273,9 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(8);
+axios.Cancel = __webpack_require__(9);
 axios.CancelToken = __webpack_require__(30);
-axios.isCancel = __webpack_require__(7);
+axios.isCancel = __webpack_require__(8);
 
 // Expose all/spread
 axios.all = function all(promises) {
@@ -1415,7 +1435,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 "use strict";
 
 
-var createError = __webpack_require__(6);
+var createError = __webpack_require__(7);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -1834,7 +1854,7 @@ module.exports = InterceptorManager;
 
 var utils = __webpack_require__(0);
 var transformData = __webpack_require__(27);
-var isCancel = __webpack_require__(7);
+var isCancel = __webpack_require__(8);
 var defaults = __webpack_require__(1);
 
 /**
@@ -1987,7 +2007,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 "use strict";
 
 
-var Cancel = __webpack_require__(8);
+var Cancel = __webpack_require__(9);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -2139,24 +2159,12 @@ if (false) {(function () {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+var _axios = __webpack_require__(3);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
     props: ["taskprop"],
@@ -2165,7 +2173,15 @@ exports.default = {
     },
     methods: {
         addDone: function addDone() {
-            this.$el.classList.toggle("done");
+            this.$props.taskprop.status = this.$props.taskprop.status == "todo" ? "done" : "todo";
+            _axios2.default.post("http://localhost:8080/edit-todo", this.$props.taskprop).then(function (response) {
+                console.log(response);
+            }).catch(function (error) {
+                console.log("error status");
+                console.log(error);
+            });
+            //toggle important
+            // this.$el.classList.toggle("done");
         },
         addUpdtask: function addUpdtask() {
             this.editActive = true;
@@ -2175,6 +2191,12 @@ exports.default = {
                 this.isActive = true;
                 document.activeElement.blur();
             } else {
+                _axios2.default.post("http://localhost:8080/edit-todo", this.$props.taskprop).then(function (response) {
+                    console.log(response);
+                }).catch(function (error) {
+                    console.log("error edit");
+                    console.log(error);
+                });
                 this.editActive = false;
             }
         },
@@ -2182,13 +2204,36 @@ exports.default = {
             this.isActive = false;
         },
         deletetask: function deletetask() {
+            _axios2.default.post("http://localhost:8080/delete-todo", { id: this.$props.taskprop.id }).then(function (response) {
+                console.log(response);
+            }).catch(function (error) {
+                console.log("error delete");
+                console.log(error);
+            });
             this.$el.classList.add("animated", "fadeOutLeftBig");
         },
         deleteAnimation: function deleteAnimation() {
             this.$el.parentElement.removeChild(this.$el);
         }
     }
-};
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 34 */
@@ -2205,6 +2250,7 @@ var render = function() {
       staticClass: "list-group-item",
       class: _vm.taskprop.status,
       staticStyle: { "max-height": "41px" },
+      attrs: { id: _vm.taskprop.id },
       on: { animationend: _vm.deleteAnimation }
     },
     [

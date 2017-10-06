@@ -32,9 +32,9 @@ export default {
     },
     created: function() {
         let self = this;
-        axios.get("http://127.0.0.1:8080/todo.json")
+        axios.get("http://localhost:8080/getTodos")
             .then(function(reponse) {
-                self.$data.tasks = reponse.data.tasks;
+                self.$data.tasks = reponse.data;
             })
             .catch(function(error) {
                 console.log(error);
@@ -47,7 +47,8 @@ export default {
             isActive: false,
             tasks: [],
             filter: "all",
-            isMouseOver: false
+            isMouseOver: false,
+            idBD: undefined
         }
     },
     methods: {
@@ -56,7 +57,30 @@ export default {
                 this.isActive = true;
                 document.activeElement.blur();
             } else {
-                this.tasks.push({ id: this.tasks.length + 1, txt: this.task, status: "todo" });
+                let self = this;
+                axios.post("http://localhost:8080/add-todo", {
+                    txt: this.task, status: 'todo'
+                })
+                    .then(function(response) {
+                        console.log(response);
+                    })
+                    .catch(function(error) {
+                        console.log("error submit");
+                        console.log(error);
+                    })
+                axios.get("http://localhost:8080/add-todo")
+                    .then(function(response) {
+                        self.$data.tasks.push({
+                            id: response.data[0].id,
+                            txt: response.data[0].txt, status: response.data[0].status
+                        });
+                        console.log("chez reponse id");
+                        console.log(response);
+                    })
+                    .catch(function(error) {
+                        console.log("error id envoyé");
+                        console.log(error);
+                    })
                 this.task = "";
                 console.dir(this.tasks);
             }

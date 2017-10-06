@@ -4,7 +4,8 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -26,10 +27,13 @@
   },
   "dependencies": {
     "animate.css": "^3.5.2",
+    "body-parser": "^1.18.2",
     "consolidate": "^0.14.5",
     "express": "^4.15.5",
     "express-handlebars": "^3.0.0",
+    "moment": "^2.18.1",
     "mysql": "^2.14.1",
+    "nodemon": "^1.12.1",
     "swig": "^1.4.2",
     "vue": "^2.4.4",
     "vue-loader": "^13.0.5",
